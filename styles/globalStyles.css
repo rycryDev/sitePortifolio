@@ -34,7 +34,6 @@ body {
   font-family: var(--fontBody);
   margin: 0;
   padding: 0;
-  margin-left: 20px;
 
   background-image:
     linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
@@ -68,8 +67,11 @@ body {
   grid-column: 1 / -1;
   list-style: none;
   display: flex;
-  flex-direction: 30%column;
+  flex-direction: row;
   gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .formacao {
@@ -84,15 +86,18 @@ body {
 
 .formacao:hover {
   border-color: var(--purpleLight);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .techCombo {
   grid-column: 1 / -1;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 140px));
   gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .techCard{
@@ -130,6 +135,9 @@ body {
   font-size: 2.5rem;
   margin-bottom: 12px;
   margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .subtitulo {
@@ -138,6 +146,8 @@ body {
   font-size: 1.75rem;
   margin-top: 24px;
   margin-bottom: 24px;
+  margin-left: 70px;
+  margin-right: auto;
 }
 
 .intro {
@@ -198,10 +208,11 @@ body {
 .descricao {
   font-size: 1.075rem;
   color: var(--white);
-  max-width: 900px;
+  max-width: 580px;
   width: 100%;
   line-height: 2;
   margin-bottom: 24px;
+  margin-right: auto;
   text-align: justify
 }
 
@@ -274,10 +285,13 @@ body {
   padding: 0;
   margin: 40px 0 0 75px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   gap: 20px;
   max-width: 900px;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .contatoCard {
