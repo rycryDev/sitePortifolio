@@ -1,0 +1,319 @@
+:root {
+  --bg:          #080b14;
+  --bgCard:     #111827;
+  --bgCardHover: #161f30;
+  --border:      rgba(139, 92, 246, 0.15);
+  --boderSoft: rgba(255, 255, 255, 0.06);
+
+  --purple:      #7c3aed;
+  --purpleLight:#a78bfa;
+  --purpleLighter: #cec2ff;
+  --purpleDark: #6b21a8;
+  --cyan:        #22d3ee;
+  --darkCyan:   rgba(34, 211, 238, 0.15);
+  --halfCyan:   rgba(34, 211, 238, 0.235);
+  --white:       #dbdbdb;
+
+  --text:        #f1f5f9;
+  --textDim:    #475569;
+
+  --radius:      12px;
+  --radiusLg:   20px;
+  --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --fontDisplay: 'Syne', sans-serif;
+  --fontBody:    'Space Grotesk', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--fontBody);
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.luz-roxa, .luz-ciano {
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.luz-roxa {
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+}
+
+.luz-ciano {
+  bottom: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.06) 0%, transparent 70%);
+}
+
+.formacoes {
+  grid-column: 1 / -1;
+  list-style: none;
+  display: flex;
+  flex-direction: 30%column;
+  gap: 16px;
+}
+
+.formacao {
+  background: var(--bgCard);
+  border: 1px solid var(--boderSoft);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 1.25rem;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.formacao:hover {
+  border-color: var(--purpleLight);
+  transform: scale(1.05);
+}
+
+.techCombo {
+  grid-column: 1 / -1;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.techCard{
+  background: var(--bgCard);
+  border: 3px solid var(--boderSoft);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+  text-align: center;
+  cursor: default;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.techCard img {
+
+    width: 80px;  
+    height: 80px;
+    
+    object-fit: contain; 
+    
+    margin-bottom: auto;
+}
+
+.techCard:hover {
+  background: var(--purple), transparent 70%;
+  border-color: var(--purpleLight);
+  transform: scale(1.05);
+  color: var(--white);
+}
+
+.titulo {
+  color: var(--white);
+  font-family: var(--fontDisplay);
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  margin-top: 40px;
+}
+
+.subtitulo {
+  color: var(--purpleLight);
+  font-family: var(--fontDisplay);
+  font-size: 1.75rem;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.intro {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  padding: 10px 16px 0;
+  background: linear-gradient(135deg, var(--white) 0%, var(--purpleLight) 60%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeSlideUp 0.8s ease both;
+}
+
+.nome h1 {
+  letter-spacing: 0.05em;
+  font-size: clamp(1.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.navLink {
+  background: var(--bgCard);
+  border: 3px solid var(--boderSoft);
+  border-radius: var(--radiusLg);
+  padding: 15px 20px;
+  text-align: center;
+  cursor: default;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.navLink a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.navLink:hover {
+  background: var(--purple);
+  border-color: var(--purpleLight);
+  transform: translateY(-5px);
+  color: var(--textDim);
+}
+
+.linkGH {
+  background: var(--halfCyan);
+  border-color: var(--darkCyan);
+}
+
+.descricao {
+  font-size: 1.075rem;
+  color: var(--white);
+  max-width: 900px;
+  width: 100%;
+  line-height: 2;
+  margin-bottom: 24px;
+  text-align: justify
+}
+
+#sobre p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.secoes {
+  margin-left: 50px;
+  margin-bottom: 40px;
+}
+
+.projetoCombo {
+  list-style: none;
+  padding: 0;
+  margin: 60px auto 0 auto;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  width: 100%;
+  align-items: end;
+}
+
+.projetoCard {
+  background: var(--bgCard);
+  border: 2px solid var(--boderSoft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.projetoCard a {
+  text-decoration: none;
+  display: block;
+}
+
+.projetoCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.projetoLeg {
+  color: var(--white);
+  padding: 16px;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.projetoCard:hover {
+  border-color: var(--purpleDark);
+  cursor: pointer;
+}
+
+.projetoCombo:hover .projetoCard {
+  transform: scale(0.9);
+}
+
+.projetoCombo .projetoCard:hover {
+  transform: scale(1.1);
+}
+
+.contatoCombo {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0 75px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.contatoCard {
+  background: var(--bgCard);
+  border: 3px solid var(--boderSoft);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.contatoTipo {
+  color: var(--purpleLight);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contatoInfo {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.contatoCard:hover {
+  border-color: var(--purpleDark);
+  transform: scale(1.05);
+  background: var(--bgCardHover);
+}
+
+#sobre .descricao {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
