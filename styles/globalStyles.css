@@ -346,3 +346,8 @@ body {
   object-fit: cover;
   margin-right:60px;
 }
+
+.tech {
+    color: var(--purple);
+    font-weight: bold;
+}
